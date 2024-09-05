@@ -1,0 +1,1093 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFD766C1-F230-41BA-95DF-67D9BB792B0F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShoesShopSystem</RootNamespace>
+    <AssemblyName>ShoesShopSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44374</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-adapter, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.bouncy-castle-adapter.8.0.3\lib\net461\itext.bouncy-castle-adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.commons.8.0.3\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfua, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.pdfua.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Razorpay, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Razorpay.3.1.1\lib\net47\Razorpay.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="customer\change_pass.aspx" />
+    <Content Include="customer\customer_panel.aspx" />
+    <Content Include="customer\feedback.aspx" />
+    <Content Include="customer\generate_pdf.aspx" />
+    <Content Include="customer\Logout.aspx" />
+    <Content Include="customer\my_order.aspx" />
+    <Content Include="customer\Razorpay_payment.aspx" />
+    <Content Include="customer\update_profile.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="images\addidas.jpg" />
+    <Content Include="images\addidas_shoes_women.jpg" />
+    <Content Include="images\addidas_slider.jpg" />
+    <Content Include="images\addidas_slider_women.jpg" />
+    <Content Include="images\addidas_slipper.jpg" />
+    <Content Include="images\addidas_slipper_women.jpg" />
+    <Content Include="images\adidas_logo.png" />
+    <Content Include="images\adidas_logo_title.png" />
+    <Content Include="images\adidas_men%27s\adidas_background_slider.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_background_sneaker.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_m_slipper_background.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_1%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_1.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_10%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_10.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_11%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_11.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_12%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_12.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_2%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_2.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_3%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_3.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_4%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_4.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_5%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_5.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_6%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_6.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_7%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_7.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_8%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_8.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_9%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_9.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_running_background.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_1%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_1.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_10%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_10.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_11%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_11.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_12%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_12.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_2%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_2.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_3%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_3.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_4%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_4.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_5%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_5.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_6%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_6.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_7%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_7.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_8%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_8.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_9%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sneaker_9.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_1%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_1.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_2%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_2.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_3%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_3.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_4%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_4.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_5%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_5.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_6%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_6.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_7%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_7.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_8%282%29.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_8.jpg" />
+    <Content Include="images\adidas_men%27s\adidas_sports_background.jpg" />
+    <Content Include="images\adidas_women%27s\adidas_w_running_background.jpg" />
+    <Content Include="images\adidas_women%27s\adidas_w_slider_background.jpg" />
+    <Content Include="images\adidas_women%27s\adidas_w_slipper_background.jpg" />
+    <Content Include="images\adidas_women%27s\adidas_w_sneaker_background.jpg" />
+    <Content Include="images\adidas_women%27s\adidas_w_sports_background.jpg" />
+    <Content Include="images\adidas_women%27s\puma_w_slider_background.jpg" />
+    <Content Include="images\background_brand.jpg" />
+    <Content Include="images\backgroung_invoice.jpg" />
+    <Content Include="images\bata_logo.png" />
+    <Content Include="images\bata_slipper_women.jpg" />
+    <Content Include="images\bata_women%27s\bata_w_slipper_background.jpg" />
+    <Content Include="images\cart_logo_title.png" />
+    <Content Include="images\cust_log.png" />
+    <Content Include="images\demo.jpg" />
+    <Content Include="images\fila_logo.png" />
+    <Content Include="images\fila_slider_women.jpg" />
+    <Content Include="images\fila_women%27s\fila_w_slider_background.jpg" />
+    <Content Include="images\loader-gif.gif" />
+    <Content Include="images\login_shoes_3.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\newbalance_shoes.png" />
+    <Content Include="images\new_balance.jpg" />
+    <Content Include="images\nike_white_logo.png" />
+    <Content Include="images\payment_icon.png" />
+    <Content Include="images\puma_logoo.png" />
+    <Content Include="images\puma_logo_title.png" />
+    <Content Include="images\puma_men%27s\puma_m_slider_1%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slider_1.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slider_2_1.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slider_2_2.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slider_3%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slider_3.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slider_4%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slider_4.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slider_background.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slipper_1.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slipper_2.jpg" />
+    <Content Include="images\puma_men%27s\puma_m_slipper_background.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_1%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_1.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_10%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_10.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_11%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_11.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_12%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_12.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_2%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_2.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_3%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_3.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_4%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_4.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_5%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_5.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_6%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_6.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_7%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_7.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_8%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_8.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_9%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_9.jpg" />
+    <Content Include="images\puma_men%27s\puma_running_background.jpeg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_1%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_1.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_10%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_10.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_11%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_11.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_12%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_12.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_2%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_2.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_3%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_3.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_4%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_4.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_5%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_5.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_6%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_6.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_7%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_7.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_8%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_8.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_9%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneakers_9.jpg" />
+    <Content Include="images\puma_men%27s\puma_sneaker_background.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_1%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_1.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_10%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_10.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_11%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_11.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_12%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_12.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_2%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_2.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_3%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_3.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_4%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_4.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_5%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_5.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_6%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_6.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_7%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_7.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_8%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_8.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_9%282%29.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_9.jpg" />
+    <Content Include="images\puma_men%27s\puma_sports_background.jpg" />
+    <Content Include="images\puma_shoes.jpeg" />
+    <Content Include="images\puma_shoes_women.jpg" />
+    <Content Include="images\puma_slider.jpg" />
+    <Content Include="images\puma_slider_women.jpg" />
+    <Content Include="images\puma_slipper.jpg" />
+    <Content Include="images\puma_slipper_women.jpg" />
+    <Content Include="images\puma_women%27s\puma_sneaker_background.jpg" />
+    <Content Include="images\puma_women%27s\puma_women_sneaker.jpg" />
+    <Content Include="images\puma_women%27s\puma_women_sneaker_2.jpg" />
+    <Content Include="images\puma_women%27s\puma_women_sneaker_3.jpg" />
+    <Content Include="images\puma_women%27s\puma_women_sneaker_4.jpg" />
+    <Content Include="images\puma_women%27s\puma_w_running_background.jpg" />
+    <Content Include="images\puma_women%27s\puma_w_slipper_background.jpg" />
+    <Content Include="images\puma_women%27s\puma_w_sports_background.jpg" />
+    <Content Include="images\sale_shoes.png" />
+    <Content Include="images\shoes_home.png" />
+    <Content Include="images\shoes_sign_up.jpg" />
+    <Content Include="images\tick_icon.png" />
+    <Content Include="images\user_icon.png" />
+    <Content Include="images\uspolo_men%27s\u.s.polo_slider_1.jpg" />
+    <Content Include="images\uspolo_men%27s\u.s.polo_slider_2.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_background_slider.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_1.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_10.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_11.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_12.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_2.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_3.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_4.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_5.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_6.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_7.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_8.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_9.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_loafer_background.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_slipper_1.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_slipper_background.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_1.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_10.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_11.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_12.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_2.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_3.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_4.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_5.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_6.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_7.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_8.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_9.jpg" />
+    <Content Include="images\uspolo_men%27s\uspolo_sneaker_background.jpg" />
+    <Content Include="images\uspolo_women%27s\uspolo_w_running_background.jpg" />
+    <Content Include="images\uspolo_women%27s\uspolo_w_sneaker_background.jpg" />
+    <Content Include="images\uspolo_women%27s\uspolo_w_sports_background.jpg" />
+    <Content Include="images\us_polo_home.png" />
+    <Content Include="images\us_polo_logo.png" />
+    <Content Include="images\us_polo_logo_title.png" />
+    <Content Include="images\us_polo_shoes.jpg" />
+    <Content Include="images\us_polo_shoes_women.jpg" />
+    <Content Include="images\us_polo_slider.jpg" />
+    <Content Include="images\us_polo_slipper.jpg" />
+    <Content Include="images\vasu.jpg" />
+    <Content Include="images\virat.png" />
+    <Content Include="images\virat_2.jpg" />
+    <Content Include="customer\otp_form.aspx" />
+    <Content Include="register.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="images\puma_men%27s\puma_m_slipper_23jpg.webp" />
+    <Content Include="images\puma_men%27s\Your Billkevin.pdf" />
+    <Content Include="customer\forgot_password.aspx" />
+    <Content Include="customer\NewPassword.aspx" />
+    <Content Include="customer\Registration.aspx" />
+    <Content Include="customer\Login.aspx" />
+    <Content Include="customer\Home1.aspx" />
+    <Content Include="Admin\admin_dashboard.aspx" />
+    <Content Include="Admin\view_cust.aspx" />
+    <Content Include="Admin\admin_chan_pass.aspx" />
+    <Content Include="Admin\add_staff_member.aspx" />
+    <Content Include="Admin\add_cust.aspx" />
+    <Content Include="Admin\add_product.aspx" />
+    <Content Include="Admin\view_staff.aspx" />
+    <Content Include="Admin\view_product.aspx" />
+    <Content Include="customer\puma_shoes_m_sneaker.aspx" />
+    <Content Include="customer\puma_shoes_m_sports.aspx" />
+    <Content Include="customer\puma_shoes_m_running.aspx" />
+    <Content Include="customer\shopping_cart.aspx" />
+    <Content Include="customer\place_order.aspx" />
+    <Content Include="Admin\view_feedback.aspx" />
+    <Content Include="customer\payment_success.aspx" />
+    <Content Include="Admin\admin_view_order.aspx" />
+    <Content Include="Admin\view_payment.aspx" />
+    <Content Include="customer\uspolo_shoes_m_sneaker.aspx" />
+    <Content Include="customer\uspolo_shoes_m_loafers.aspx" />
+    <Content Include="customer\adidas_shoes_m_sneaker.aspx" />
+    <Content Include="customer\adidas_shoes_m_running.aspx" />
+    <Content Include="customer\adidas_shoes_m_sports.aspx" />
+    <Content Include="customer\puma_shoes_w_sneaker.aspx" />
+    <Content Include="customer\puma_shoes_w_running.aspx" />
+    <Content Include="customer\puma_shoes_w_sports.aspx" />
+    <Content Include="customer\uspolo_shoes_w_sneaker.aspx" />
+    <Content Include="customer\uspolo_shoes_w_running.aspx" />
+    <Content Include="customer\uspolo_shoes_w_sports.aspx" />
+    <Content Include="customer\adidas_shoes_w_sneaker.aspx" />
+    <Content Include="customer\adidas_shoes_w_running.aspx" />
+    <Content Include="customer\adidas_shoes_w_sports.aspx" />
+    <Content Include="staff\staff_change_password.aspx" />
+    <Content Include="staff\staff_add_product.aspx" />
+    <Content Include="staff\staff_view_product.aspx" />
+    <Content Include="staff\staff_view_cust.aspx" />
+    <Content Include="staff\staff_view_order.aspx" />
+    <Content Include="staff\staff_view_payment.aspx" />
+    <Content Include="staff\staff_view_feedback.aspx" />
+    <Content Include="staff\staff_update_profile.aspx" />
+    <Content Include="staff\staff_dashboard.aspx" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="staff\staff_chang_pass.aspx" />
+    <Content Include="staff\staff_panel.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\change_pass.aspx.cs">
+      <DependentUpon>change_pass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\change_pass.aspx.designer.cs">
+      <DependentUpon>change_pass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\customer_panel.aspx.cs">
+      <DependentUpon>customer_panel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\customer_panel.aspx.designer.cs">
+      <DependentUpon>customer_panel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\feedback.aspx.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\feedback.aspx.designer.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\generate_pdf.aspx.cs">
+      <DependentUpon>generate_pdf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\generate_pdf.aspx.designer.cs">
+      <DependentUpon>generate_pdf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\my_order.aspx.cs">
+      <DependentUpon>my_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\my_order.aspx.designer.cs">
+      <DependentUpon>my_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\Razorpay_payment.aspx.cs">
+      <DependentUpon>Razorpay_payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\Razorpay_payment.aspx.designer.cs">
+      <DependentUpon>Razorpay_payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\update_profile.aspx.cs">
+      <DependentUpon>update_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\update_profile.aspx.designer.cs">
+      <DependentUpon>update_profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="customer\otp_form.aspx.cs">
+      <DependentUpon>otp_form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\otp_form.aspx.designer.cs">
+      <DependentUpon>otp_form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site3.Master.cs">
+      <DependentUpon>Site3.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site3.Master.designer.cs">
+      <DependentUpon>Site3.Master</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_chang_pass.aspx.cs">
+      <DependentUpon>staff_chang_pass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_chang_pass.aspx.designer.cs">
+      <DependentUpon>staff_chang_pass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_panel.aspx.cs">
+      <DependentUpon>staff_panel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_panel.aspx.designer.cs">
+      <DependentUpon>staff_panel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\forgot_password.aspx.cs">
+      <DependentUpon>forgot_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\forgot_password.aspx.designer.cs">
+      <DependentUpon>forgot_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\NewPassword.aspx.cs">
+      <DependentUpon>NewPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\NewPassword.aspx.designer.cs">
+      <DependentUpon>NewPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\Home1.aspx.cs">
+      <DependentUpon>Home1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\Home1.aspx.designer.cs">
+      <DependentUpon>Home1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin_dashboard.aspx.cs">
+      <DependentUpon>admin_dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin_dashboard.aspx.designer.cs">
+      <DependentUpon>admin_dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\view_cust.aspx.cs">
+      <DependentUpon>view_cust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\view_cust.aspx.designer.cs">
+      <DependentUpon>view_cust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin_chan_pass.aspx.cs">
+      <DependentUpon>admin_chan_pass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin_chan_pass.aspx.designer.cs">
+      <DependentUpon>admin_chan_pass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_staff_member.aspx.cs">
+      <DependentUpon>add_staff_member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_staff_member.aspx.designer.cs">
+      <DependentUpon>add_staff_member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_cust.aspx.cs">
+      <DependentUpon>add_cust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_cust.aspx.designer.cs">
+      <DependentUpon>add_cust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_product.aspx.cs">
+      <DependentUpon>add_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_product.aspx.designer.cs">
+      <DependentUpon>add_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\view_staff.aspx.cs">
+      <DependentUpon>view_staff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\view_staff.aspx.designer.cs">
+      <DependentUpon>view_staff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\view_product.aspx.cs">
+      <DependentUpon>view_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\view_product.aspx.designer.cs">
+      <DependentUpon>view_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\puma_shoes_m_sneaker.aspx.cs">
+      <DependentUpon>puma_shoes_m_sneaker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\puma_shoes_m_sneaker.aspx.designer.cs">
+      <DependentUpon>puma_shoes_m_sneaker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\puma_shoes_m_sports.aspx.cs">
+      <DependentUpon>puma_shoes_m_sports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\puma_shoes_m_sports.aspx.designer.cs">
+      <DependentUpon>puma_shoes_m_sports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\puma_shoes_m_running.aspx.cs">
+      <DependentUpon>puma_shoes_m_running.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\puma_shoes_m_running.aspx.designer.cs">
+      <DependentUpon>puma_shoes_m_running.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\shopping_cart.aspx.cs">
+      <DependentUpon>shopping_cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\shopping_cart.aspx.designer.cs">
+      <DependentUpon>shopping_cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\place_order.aspx.cs">
+      <DependentUpon>place_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\place_order.aspx.designer.cs">
+      <DependentUpon>place_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\view_feedback.aspx.cs">
+      <DependentUpon>view_feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\view_feedback.aspx.designer.cs">
+      <DependentUpon>view_feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\payment_success.aspx.cs">
+      <DependentUpon>payment_success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\payment_success.aspx.designer.cs">
+      <DependentUpon>payment_success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin_view_order.aspx.cs">
+      <DependentUpon>admin_view_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin_view_order.aspx.designer.cs">
+      <DependentUpon>admin_view_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\view_payment.aspx.cs">
+      <DependentUpon>view_payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\view_payment.aspx.designer.cs">
+      <DependentUpon>view_payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\uspolo_shoes_m_sneaker.aspx.cs">
+      <DependentUpon>uspolo_shoes_m_sneaker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\uspolo_shoes_m_sneaker.aspx.designer.cs">
+      <DependentUpon>uspolo_shoes_m_sneaker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\uspolo_shoes_m_loafers.aspx.cs">
+      <DependentUpon>uspolo_shoes_m_loafers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\uspolo_shoes_m_loafers.aspx.designer.cs">
+      <DependentUpon>uspolo_shoes_m_loafers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_m_sneaker.aspx.cs">
+      <DependentUpon>adidas_shoes_m_sneaker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_m_sneaker.aspx.designer.cs">
+      <DependentUpon>adidas_shoes_m_sneaker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_m_running.aspx.cs">
+      <DependentUpon>adidas_shoes_m_running.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_m_running.aspx.designer.cs">
+      <DependentUpon>adidas_shoes_m_running.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_m_sports.aspx.cs">
+      <DependentUpon>adidas_shoes_m_sports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_m_sports.aspx.designer.cs">
+      <DependentUpon>adidas_shoes_m_sports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\puma_shoes_w_sneaker.aspx.cs">
+      <DependentUpon>puma_shoes_w_sneaker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\puma_shoes_w_sneaker.aspx.designer.cs">
+      <DependentUpon>puma_shoes_w_sneaker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\puma_shoes_w_running.aspx.cs">
+      <DependentUpon>puma_shoes_w_running.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\puma_shoes_w_running.aspx.designer.cs">
+      <DependentUpon>puma_shoes_w_running.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\puma_shoes_w_sports.aspx.cs">
+      <DependentUpon>puma_shoes_w_sports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\puma_shoes_w_sports.aspx.designer.cs">
+      <DependentUpon>puma_shoes_w_sports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\uspolo_shoes_w_sneaker.aspx.cs">
+      <DependentUpon>uspolo_shoes_w_sneaker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\uspolo_shoes_w_sneaker.aspx.designer.cs">
+      <DependentUpon>uspolo_shoes_w_sneaker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\uspolo_shoes_w_running.aspx.cs">
+      <DependentUpon>uspolo_shoes_w_running.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\uspolo_shoes_w_running.aspx.designer.cs">
+      <DependentUpon>uspolo_shoes_w_running.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\uspolo_shoes_w_sports.aspx.cs">
+      <DependentUpon>uspolo_shoes_w_sports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\uspolo_shoes_w_sports.aspx.designer.cs">
+      <DependentUpon>uspolo_shoes_w_sports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_w_sneaker.aspx.cs">
+      <DependentUpon>adidas_shoes_w_sneaker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_w_sneaker.aspx.designer.cs">
+      <DependentUpon>adidas_shoes_w_sneaker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_w_running.aspx.cs">
+      <DependentUpon>adidas_shoes_w_running.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_w_running.aspx.designer.cs">
+      <DependentUpon>adidas_shoes_w_running.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_w_sports.aspx.cs">
+      <DependentUpon>adidas_shoes_w_sports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\adidas_shoes_w_sports.aspx.designer.cs">
+      <DependentUpon>adidas_shoes_w_sports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_change_password.aspx.cs">
+      <DependentUpon>staff_change_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_change_password.aspx.designer.cs">
+      <DependentUpon>staff_change_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_add_product.aspx.cs">
+      <DependentUpon>staff_add_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_add_product.aspx.designer.cs">
+      <DependentUpon>staff_add_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_view_product.aspx.cs">
+      <DependentUpon>staff_view_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_view_product.aspx.designer.cs">
+      <DependentUpon>staff_view_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_view_cust.aspx.cs">
+      <DependentUpon>staff_view_cust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_view_cust.aspx.designer.cs">
+      <DependentUpon>staff_view_cust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_view_order.aspx.cs">
+      <DependentUpon>staff_view_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_view_order.aspx.designer.cs">
+      <DependentUpon>staff_view_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_view_payment.aspx.cs">
+      <DependentUpon>staff_view_payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_view_payment.aspx.designer.cs">
+      <DependentUpon>staff_view_payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_view_feedback.aspx.cs">
+      <DependentUpon>staff_view_feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_view_feedback.aspx.designer.cs">
+      <DependentUpon>staff_view_feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_update_profile.aspx.cs">
+      <DependentUpon>staff_update_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_update_profile.aspx.designer.cs">
+      <DependentUpon>staff_update_profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff\staff_dashboard.aspx.cs">
+      <DependentUpon>staff_dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff\staff_dashboard.aspx.designer.cs">
+      <DependentUpon>staff_dashboard.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="upload_img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Site1.Master" />
+    <Content Include="Site2.Master" />
+    <Content Include="Site3.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65284</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44374/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

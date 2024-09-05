@@ -1,0 +1,482 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ShoesShopSystem.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        /* --------------- Cart-icon -------------- */
+        .cart-icon{
+            position: relative;
+            font-size: 22px;
+            color: #000;
+            left: 17%;
+            top: 2px;
+        }
+        /* ------------------------------------ Cart-Count -------------------------------- */
+        .cart-icon span{
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            background-color: #000;
+            line-height: 22px;
+            text-align: center;
+            top: -20%;
+            font-size: 15px;
+            font-weight: 600;
+            margin-left: -0.9rem;
+            border-radius: 50%;
+            color: #fff;
+        }
+        .cart-icon:hover{
+            /*color: #000;*/
+        }
+
+        .navbar {
+            position: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            background: #fff;
+            display: inline-block;
+            text-align: center;
+            border-bottom: 1px solid #000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            width: 100px;
+            padding: 7px;
+            top: -30%;
+            left: 20px;
+        }
+
+            .logo img {
+                width: 100px;
+            }
+
+        .navbar ul li {
+            display: inline-block;
+            margin: 26px;
+        }
+
+            .navbar ul li a {
+                text-decoration: none;
+                justify-content: center;
+                position: relative;
+                font-size: 17px;
+                letter-spacing: 0.5px;
+                color: black;
+                padding: 7px 12px;
+                transition: all 0.1s ease;
+                left: 28px;
+            }
+
+                .navbar ul li a:hover {
+                    border-radius: 30px;
+                    background-color: black;
+                    color: white;
+                }
+
+        .login-btn {
+            position: relative;
+            left: 125px;
+        }
+
+        .reg-btn {
+            position: relative;
+            left: 160px;
+        }
+        /* ----------------------------------------- Drop Down --------------------------------------- */
+        .dropdown-menu {
+            /* background-color: red; */
+            position: absolute;
+            height: 160px;
+            width: 20px;
+            top: 40px;
+        }
+
+            .dropdown-menu li a {
+                margin: -20px;
+            }
+
+        /* -------------------------------------- Footer --------------------------------------- */
+        #footer {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 57vh;
+            background-color: black;
+            justify-content: center;
+        }
+
+            #footer .text {
+                display: flex;
+                position: absolute;
+                align-items: center;
+                padding: 10px;
+                width: 92%;
+                height: 20%;
+                left: 4%;
+                /* background-color: red;    */
+            }
+
+                #footer .text h1 {
+                    display: block;
+                    position: absolute;
+                    font-weight: 600;
+                    font-size: 21px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    color: white;
+                    top: 3%;
+                }
+
+                #footer .text p {
+                    display: block;
+                    position: absolute;
+                    color: grey;
+                    top: 63%;
+                    letter-spacing: 0.3px;
+                    font-size: 16px;
+                }
+
+                    #footer .text p:hover {
+                        color: powderblue;
+                        cursor: pointer;
+                    }
+                /* ---------------- social icon ---------------- */
+                #footer .text .icon {
+                    position: relative;
+                    font-size: 25px;
+                    margin: 10px;
+                    left: 84%;
+                    color: powderblue;
+                    transition: all 0.5s ease;
+                }
+
+                    #footer .text .icon:hover {
+                        color: white;
+                        cursor: pointer;
+                        text-shadow: 0px 0px 20px white;
+                        transform: translateY(-7px);
+                    }
+            /* -------------- Products(footer) ---------------- */
+            #footer .products {
+                display: block;
+                position: absolute;
+                text-align: left;
+                width: 14%;
+                height: 50%;
+                left: 10%;
+                top: 25%;
+                line-height: 13px;
+                /* background-color: red; */
+            }
+                /* ------ Product(text) ------ */
+                #footer .products h1 {
+                    display: block;
+                    position: relative;
+                    color: whitesmoke;
+                    font-weight: 600;
+                    font-size: 14.5px;
+                    text-transform: uppercase;
+                }
+
+                #footer .products p {
+                    display: block;
+                    position: relative;
+                    color: grey;
+                    font-size: 14.2px;
+                    letter-spacing: 0.3px;
+                }
+
+                    #footer .products p:hover {
+                        color: powderblue;
+                        cursor: pointer;
+                        text-shadow: 0px 0px 5px powderblue;
+                    }
+            /* -------------------------- Brands (footer)------------------------ */
+            #footer .brands {
+                display: block;
+                position: absolute;
+                text-align: left;
+                width: 12%;
+                height: 50%;
+                left: 27%;
+                top: 25%;
+                line-height: 13px;
+                /* background-color: red; */
+            }
+                /* ------ Brands(text) ------ */
+                #footer .brands h1 {
+                    display: block;
+                    position: relative;
+                    color: whitesmoke;
+                    font-weight: 600;
+                    font-size: 14.5px;
+                    text-transform: uppercase;
+                }
+
+                #footer .brands p {
+                    display: block;
+                    position: relative;
+                    color: grey;
+                    font-size: 14.2px;
+                    letter-spacing: 0.3px;
+                }
+
+                    #footer .brands p:hover {
+                        color: powderblue;
+                        cursor: pointer;
+                        text-shadow: 0px 0px 5px powderblue;
+                    }
+            /* ----------------------- Contact ----------------------- */
+            #footer .contact {
+                display: block;
+                position: absolute;
+                text-align: left;
+                width: 21%;
+                height: 50%;
+                left: 42%;
+                top: 25%;
+                line-height: 19px;
+                /* background-color: red; */
+            }
+
+                #footer .contact h1 {
+                    display: block;
+                    position: relative;
+                    color: whitesmoke;
+                    font-weight: 600;
+                    font-size: 14.5px;
+                    text-transform: uppercase;
+                }
+
+                #footer .contact p {
+                    display: block;
+                    position: relative;
+                    color: grey;
+                    font-size: 14.2px;
+                    letter-spacing: 0.3px;
+                }
+
+                    #footer .contact p:hover {
+                        color: powderblue;
+                        cursor: pointer;
+                        text-shadow: 0px 0px 5px powderblue;
+                    }
+            /* ----------------------- Email (Footer) ----------------------- */
+            #footer .email {
+                display: block;
+                position: absolute;
+                text-align: left;
+                width: 19%;
+                height: 50%;
+                left: 66%;
+                top: 25%;
+                line-height: 13px;
+                /* background-color: red; */
+            }
+
+                #footer .email h1 {
+                    display: block;
+                    position: relative;
+                    color: whitesmoke;
+                    font-weight: 600;
+                    font-size: 14.5px;
+                    text-transform: uppercase;
+                }
+
+                #footer .email p {
+                    display: block;
+                    position: relative;
+                    color: grey;
+                    font-size: 14.2px;
+                    letter-spacing: 0.3px;
+                }
+
+                    #footer .email p:hover {
+                        color: powderblue;
+                        cursor: pointer;
+                        text-shadow: 0px 0px 5px powderblue;
+                    }
+            /* ----------------------- Telephone (Footer) ----------------------- */
+            #footer .telephone {
+                display: block;
+                position: absolute;
+                text-align: left;
+                width: 13%;
+                height: 25%;
+                left: 66%;
+                top: 45%;
+                line-height: 13px;
+                /* background-color: red; */
+            }
+
+                #footer .telephone h1 {
+                    display: block;
+                    position: relative;
+                    color: whitesmoke;
+                    font-weight: 600;
+                    font-size: 14.5px;
+                    text-transform: uppercase;
+                }
+
+                #footer .telephone p {
+                    display: block;
+                    position: relative;
+                    color: grey;
+                    font-size: 14.2px;
+                    letter-spacing: 0.3px;
+                }
+
+                    #footer .telephone p:hover {
+                        color: powderblue;
+                        cursor: pointer;
+                        text-shadow: 0px 0px 5px powderblue;
+                    }
+            /* ------- Lining in foote -------- */
+            #footer span {
+                display: block;
+                position: relative;
+                width: 90%;
+                height: 4px;
+                border-top: 1px solid #11141D;
+                /* border-bottom: 1px solid lightgrey; */
+                border-bottom: 1px solid #4e4e4e;
+                background-color: #000000;
+                border-radius: 30px;
+                top: 83%;
+            }
+            /* ----------- copyright --------------- */
+            #footer .copyright {
+                display: block;
+                position: absolute;
+                text-align: center;
+                width: 33%;
+                height: 10%;
+                top: 89%;
+                /* background-color: red; */
+            }
+
+                #footer .copyright p {
+                    display: block;
+                    position: relative;
+                    color: grey;
+                    font-size: 14.5px;
+                    letter-spacing: 0.5px;
+                }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <section id="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <asp:Image ID="logoImage" runat="server" ImageUrl="images/logo.png" AlternateText="Logo" />
+                </div>
+                <ul>
+                    <li class=""><a href="/customer/Home1.aspx">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Men 
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#men-shoes">Shoes</a></li>
+                            <%--<li><a href="#men-slipper">Slider</a></li>
+                            <li><a href="#men-flipflop">Slipper</a></li>--%>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Women 
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#wo4men-shoes">Shoes</a></li>
+                            <%--<li><a href="#women-slider">Slider</a></li>
+                            <li><a href="#women-slipper">Slipper</a></li>--%>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+
+                    <asp:PlaceHolder ID="LoginPlaceholder" runat="server"></asp:PlaceHolder>
+
+                </ul>
+            </nav>
+        </section>
+
+        <!-------------------------------------------- Footer ---------------------------------------->
+        <!--<section id="footer">
+            <div class="text">
+                <h1>Sign up &</h1>
+                <p>Get the latest deals and special offers</p>
+
+                <i class="fa fa-facebook-square icon"></i>
+                <i class="fa fa-firefox icon"></i>
+                <i class="fa fa-instagram icon"></i>
+                <i class="fa fa-pinterest-square icon"></i>
+            </div>
+            <div class="products">
+                <h1>Products</h1>
+                <p>For Men's & Women's</p>
+                <p>Shoes</p>
+                <p>Slider</p>
+                <p>Slippers</p>
+            </div>
+            <div class="brands">
+                <h1>Brands</h1>
+                <p>Puma</p>
+                <p>U.S Polo</p>
+                <p>Adidas</p>
+                <p>Bata</p>
+                <p>Fila</p>
+            </div>
+            <div class="contact">
+                <h1>Get In Touch</h1>
+                <p>Address : A - 101 , Rise On Plaza , Ground Flore , Sarthana Jakatnaka , Surat - 395008.</p>
+            </div>
+            <div class="email">
+                <h1>Email</h1>
+                <p>shoesshop8700@gmail.com</p>
+            </div>
+            <div class="telephone">
+                <h1>Telephone</h1>
+                <p>+(070) 200 260 099</p>
+            </div>
+            <span></span>
+            <div class="copyright">
+                <p>Copyright &copy; 2022 - 2023 | All Rights Reserved. </p>
+            </div>
+        </section>
+        -->
+
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
